@@ -5,22 +5,33 @@
 <table>
   <thead>
     <tr>
-      <th>Content</th>
-      <th>Type</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      
     </tr>
   </thead>
 
   <tbody>
     <% @notifications.each do |notification| %>
       <tr>
-        <td><%= notification.content %></td>
-        <td><%= notification.type %></td>
-        <td><%= notification.user %></td>
-        <td><%= link_to 'Show', notification %></td>
-        <td><%= link_to 'Edit', edit_notification_path(notification) %></td>
-        <td><%= link_to 'Destroy', notification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <div class='notification'>
+            <div class='header-time'>
+              <p><%= notification.created_at.try(:strftime, "%d/%m/%Y %H:%M:%S") %></p>
+            </div>
+            <div class='header-type'>
+              <strong><%= notification.notification_type %></strong>
+            </div>
+            <div class='content'>
+              <h3>Observações:</h3>
+              <p><%= notification.content %></p>
+            </div>
+            <div class='footer'>
+              <button>Responder</button>
+              <button>Confirmar</button>
+            </div>
+            
+          </div>
+        </td>
+        
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +39,5 @@
 
 <br>
 
-<%= link_to 'New Notification', new_notification_path %>
+
+

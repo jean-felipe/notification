@@ -44,12 +44,17 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (7.1.4)
+    autoprefixer-rails (6.7.6)
+      execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     capybara (2.13.0)
       addressable
@@ -78,6 +83,8 @@ GEM
       warden (~> 1.2.3)
     devise-bootstrapped (0.1.1)
     diff-lcs (1.3)
+    enumerize (2.0.1)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (2.7.0)
     factory_girl (4.8.0)
@@ -246,9 +253,11 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  bootstrap-sass
   coffee-rails (~> 4.2)
   devise
   devise-bootstrapped
+  enumerize
   factory_girl_rails
   jbuilder (~> 2.5)
   jquery-rails
