@@ -37,10 +37,12 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'annotate'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'react-rails'
 gem 'devise'
 gem 'devise-bootstrapped'
+gem 'enumerize'
 
 group :development, :test do
   # Call 'binding.pry' anywhere in the code to stop execution and get a debugger console
