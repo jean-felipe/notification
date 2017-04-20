@@ -1,0 +1,22 @@
+ <tr>
+        <td>
+          <div class='notification'>
+            <div class='header-time'>
+              <p><%= notification.created_at.try(:strftime, "%d/%m/%Y %H:%M:%S") %></p>
+            </div>
+            <div class='header-type'>
+              <strong><%= notification.notification_type %></strong>
+            </div>
+            <div class='content'>
+              <h3>Observações:</h3>
+              <p><%= notification.content %></p>
+            </div>
+            <div class='footer'>
+              <button>Responder</button>
+              <button>Confirmar</button>
+            </div>
+            
+          </div>
+        </td>
+        
+      </tr> 

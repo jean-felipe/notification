@@ -9,32 +9,24 @@
 
     <%= stylesheet_link_tag "application", :media => "all" %>
 
-    <!-- For third-generation iPad with high-resolution Retina display: -->
-    <!-- Size should be 144 x 144 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
-
-    <!-- For iPhone with high-resolution Retina display: -->
-    <!-- Size should be 114 x 114 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
-
-    <!-- For first- and second-generation iPad: -->
-    <!-- Size should be 72 x 72 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
-
-    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <!-- Size should be 57 x 57 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
-
-    <!-- For all other devices -->
-    <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
-
+   
     <%= javascript_include_tag "application" %>
+    <script src="https:js.pusher.com/4.0/pusher.min.js"></script>
+    <script>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
-    <![endif]-->
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('726fa5169466b489c561', {
+      encrypted: true
+    });
+
+    var channel = pusher.subscribe('notification_channel');
+    channel.bind('my-event', function(data){
+      alert(data.message);
+    });
+
+    </script>
+
   </head>
   <body>
 
@@ -64,8 +56,8 @@
           <div class="well sidebar-nav">
             <h3>Criar nova notificação</h3>
             <ul class="nav nav-list">
-              <%= simple_form_for Notification.new, :url => { :action => :create }  do |f| %>
-               <li><%= f.input :content %></li>
+              <%= simple_form_for Notification.new, :url => { :action => :create } do |f| %>
+               <li><%= f.input :content, autofocus: true %></li>
                <li><%= f.input :notification_type, :as => :radio_buttons %></li>
                <li><%= f.submit %></li>
               <% end %>
