@@ -1,5 +1,5 @@
 # Notification App
-======
+
 
 * Clone the project, cd the project and run bundle follow by rake db:setup && rails db:migrate
 
@@ -16,6 +16,6 @@ The project tecnologies:
 * Pusher
 * W3schools CSS for cards
 
-=====
+
 Some question or bug, please open an issue.
 
