@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    
     <%= javascript_include_tag "application" %>
     <script src="https:js.pusher.com/4.0/pusher.min.js"></script>
@@ -39,7 +39,8 @@
         </button>
         <%= link_to "Notification", root_path, class: 'navbar-brand' %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
+          <li class= 'navbar-brand'><%= current_user.email %></li>
             
           </ul>
         </div>
