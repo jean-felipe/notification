@@ -16,10 +16,13 @@
 
 class Notification < ApplicationRecord
     extend Enumerize
+    include Filterable
     
   belongs_to :user
   
   enumerize :notification_type, :in => { Exames: 1, Consulta: 2, Cirurgia: 3}
+
+  scope :content, -> (txt) { where("content like ?", "#{txt}")}
 
 
   def creation
