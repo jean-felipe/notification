@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-	<h1>Notifications</h1>
+	<h1>Notificações</h1>
 	<div class="col-sm-4">
 	  
 	</div>
@@ -8,7 +8,7 @@
 
 
   <div data-behavior="notification-panel" class="col-sm-8" ng-controller="notificationCtrl">
-  <div ng-repeat="n in not | filter: obsFilter | filter : radio[selectedRadio]">
+  <div ng-repeat="n in not | filter: obsFilter | orderBy : '-creation'">
     <div class="notification-panel">
           <div class='w3-card-4'>
             <header class="w3-container w3-blue">
@@ -29,7 +29,7 @@
   
   <div class="filters col-sm-4 form-group">
   	<div>
-  		<h4>Filtrar</h4>
+  		<h4>Filtrar(not working)</h4>
   		<p>Tipo de Notificação:</p>
       
   		<span class="radio">

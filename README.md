@@ -1,24 +1,21 @@
-# README
+# Notification App
+======
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Clone the project, cd the project and run bundle follow by rake db:setup && rails db:migrate
 
-Things you may want to cover:
+* Then you can signup and start to create notifitions.
 
-* Ruby version
+The project tecnologies:
+====
 
-* System dependencies
+* Rails 5
+* Action Cable
+* Angular
+* Bootstrap
+* Rspec
+* Pusher
+* W3schools CSS for cards
 
-* Configuration
+=====
+Some question or bug, please open an issue.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Usuario
+      notification: Notificação
+    attributes:
+      notification:
+        content: Observação
+        notification_type: Tipo da Notificação
+
