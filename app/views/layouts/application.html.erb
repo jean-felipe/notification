@@ -40,7 +40,7 @@
         <%= link_to "Notification", root_path, class: 'navbar-brand' %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav navbar-right">
-          <li class= 'navbar-brand'><%= current_user.email %></li>
+          <li class= 'navbar-brand'><%= current_user.email if current_user.present? %></li>
             
           </ul>
         </div>
