@@ -21,7 +21,7 @@ class NotificationsController < ApplicationController
     @notification.user = current_user
     respond_to do |format|
       if @notification.save
-        format.html { redirect_to root_path, notice: 'Notification was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Notificação criada.' }
         format.json { render :show, status: :created, location: @notification }
         push_notification
       else
@@ -63,7 +63,7 @@ class NotificationsController < ApplicationController
 
     def push_notification
       Pusher.trigger('notification_channel', 'my-event', {
-         message: 'Hey test!'
+         message: 'This is a alert for Pusher, notificação criada!'
         })
     end
 end
