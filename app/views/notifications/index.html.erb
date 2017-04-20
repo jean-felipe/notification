@@ -1,21 +1,46 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+	<h1>Notifications</h1>
+	<div class="col-sm-4">
+	  
+	</div>
+</div>
 
-<h1>Notifications</h1>
 
-<table>
-  <thead>
-    <tr>
-      
-    </tr>
-  </thead>
-
-  <tbody data-behavior="notification-panel">
+  <div data-behavior="notification-panel" class="col-sm-8">
     <% @notifications.each do |notification| %>
       <%= render notification %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+  
+  <div class="filters col-sm-4 form-group">
+  	<div>
+  		<h4>Filtrar</h4>
+  		<p>Tipo de Notificação:</p>
+  		<span class="radio">
+  		<label for="notification_notification_type_exames">
+  		   <input class="radio_buttons optional" type="radio" value="Exames" name="notification[notification_type]" id="notification_notification_type_exames">
+  		   Exames</label>
+  		</span>
+  		<span class="radio">
+  		<label for="notification_notification_type_consulta">
+  		   <input class="radio_buttons optional" type="radio" value="Consulta" name="notification[notification_type]" id="notification_notification_type_Consulta">
+  		   Consulta</label>
+  		</span>
+  		<span class="radio">
+  		<label for="notification_notification_type_irurgia">
+  		   <input class="radio_buttons optional" type="radio" value="Cirurgia" name="notification[notification_type]" id="notification_notification_type_Cirurgia">
+  		   Cirurgia</label>
+  		</span>
+  	</div>
 
+  	<div>
+  		<h4>Buscar:</h4>
+  	<p>Observação:</p>
+  	<input type="text" placeholder="search" class="form-control col-sm-4">
+  	<input type="submit" class="btn btn-primary" value="Buscar">
+  	</div>
+  </div>
 <br>
 
 

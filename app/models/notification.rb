@@ -20,5 +20,10 @@ class Notification < ApplicationRecord
   belongs_to :user
   
   enumerize :notification_type, :in => { Exames: 1, Consulta: 2, Cirurgia: 3}
+
+
+  def creation
+  	created_at.try(:strftime, "%d/%m/%Y %H:%M:%S")
+  end
   
 end
