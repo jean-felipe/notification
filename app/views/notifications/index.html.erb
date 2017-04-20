@@ -7,41 +7,54 @@
 </div>
 
 
-  <div data-behavior="notification-panel" class="col-sm-8">
-    <% @notifications.each do |notification| %>
-      <%= render notification %>
-    <% end %>
+  <div data-behavior="notification-panel" class="col-sm-8" ng-controller="notificationCtrl">
+  <div ng-repeat="n in not | filter: obsFilter | filter : radio[selectedRadio]">
+    <div class="notification-panel">
+          <div class='w3-card-4'>
+            <header class="w3-container w3-blue">
+              <h3>{{n.notification_type}}</h3><h6>{{n.creation}}</h6>
+            </header>
+            <div class='w3-container w3-light-grey'>
+              <strong>Observações:</strong>
+              <p>{{n.content}}</p>
+            </div>
+            <footer class='w3-container w3-dark-grey'>
+              <h5>Responder Confirmar</h5>
+            </footer>
+           </div>
+       </div>
+  </div>
+    
   </div>
   
   <div class="filters col-sm-4 form-group">
   	<div>
   		<h4>Filtrar</h4>
   		<p>Tipo de Notificação:</p>
+      
   		<span class="radio">
   		<label for="notification_notification_type_exames">
-  		   <input class="radio_buttons optional" type="radio" value="Exames" name="notification[notification_type]" id="notification_notification_type_exames">
-  		   Exames</label>
+  		   <input class="radio_buttons optional" type="radio" ng-model="filterRadio" value="Exames">Exames</label>
   		</span>
   		<span class="radio">
   		<label for="notification_notification_type_consulta">
-  		   <input class="radio_buttons optional" type="radio" value="Consulta" name="notification[notification_type]" id="notification_notification_type_Consulta">
-  		   Consulta</label>
+  		   <input class="radio_buttons optional" type="radio" ng-model="filterRadio" value="Consulta">Consulta</label>
   		</span>
   		<span class="radio">
   		<label for="notification_notification_type_irurgia">
-  		   <input class="radio_buttons optional" type="radio" value="Cirurgia" name="notification[notification_type]" id="notification_notification_type_Cirurgia">
-  		   Cirurgia</label>
+  		   <input class="radio_buttons optional" type="radio" ng-model="filterRadio" value="Cirurgia">Cirurgia</label>
   		</span>
   	</div>
 
-  	<div>
+  	<div class="filters buscar" style="height: 150px;">
   		<h4>Buscar:</h4>
   	<p>Observação:</p>
-  	<input type="text" placeholder="search" class="form-control col-sm-4">
-  	<input type="submit" class="btn btn-primary" value="Buscar">
+  	<input type="text" placeholder="search" class="form-control col-sm-4" ng-model="obsFilter">
   	</div>
   </div>
 <br>
+
+
 
 
 

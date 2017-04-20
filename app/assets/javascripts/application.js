@@ -18,7 +18,24 @@
 //= require react
 //= require react_ujs
 //= require components
+//= require angular
 //= require_tree .
+
+var app = angular.module('notificationApp', []);
+
+app.controller('notificationCtrl', function($scope, $http){
+	var not = [];
+	$http({
+		method: "GET",
+		url: "http://localhost:3000/notifications.json"
+	}).then(function sucess(response){
+		$scope.not = response.data;
+		console.log('reponse success');
+	}, function error(reponse){
+		$scope.not = response.statusText;
+		console.log('reponse error');
+	});
+});
 
 
 

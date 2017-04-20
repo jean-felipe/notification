@@ -1,0 +1,1 @@
+notification = angular.module('notification', [])
